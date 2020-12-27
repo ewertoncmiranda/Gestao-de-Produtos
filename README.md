@@ -1,5 +1,5 @@
-Api desenvolvida com Spring Data e JPA ,documentada com SWAGGER.
-# This is an <h1> tag
-## This is an <h2> tag
-###### This is an <h6> tag
+Api desenvolvida com Spring Data JPA e MySQL ,documentada com SWAGGER.
+É composta por apenas uma entidade ,Produto.
+
+Esta disponível no Heroku :
 https://myproductapi.herokuapp.com/
