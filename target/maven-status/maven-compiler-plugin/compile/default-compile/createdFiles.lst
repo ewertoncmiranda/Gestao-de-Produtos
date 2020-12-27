@@ -1,0 +1,5 @@
+miranda\mb\product\models\Produto.class
+miranda\mb\product\repositorios\ProdutoRepositoryJPA.class
+miranda\mb\product\config\SwaggerConfig.class
+miranda\mb\product\MyProductApiApplication.class
+miranda\mb\product\resource\ProdutoResource.class
