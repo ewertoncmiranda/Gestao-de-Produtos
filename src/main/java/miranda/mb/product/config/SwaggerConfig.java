@@ -23,8 +23,8 @@ public class SwaggerConfig {
 	public Docket productApi(){
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
-				.apis(RequestHandlerSelectors.basePackage("miranda.mb.product"))
-				.paths(PathSelectors.regex("/api.*"))
+				.apis(RequestHandlerSelectors.basePackage("miranda.mb.product.controller"))
+				.paths(PathSelectors.any())
 				.build()
 				.apiInfo(metaInfo());				
 			
@@ -33,7 +33,7 @@ public class SwaggerConfig {
 	private ApiInfo metaInfo() {
 	return new ApiInfo(
 			"Produtos API Rest" ,
-			"Api de Controle de Produtos" ,
+			"Api para manipulação de produtos. " ,
 			"1.0" ,
 			"Terms of Service",
 			new springfox.documentation.service.Contact ("Ewerton Miranda", "ewertoncmiranda.github.io", ""),

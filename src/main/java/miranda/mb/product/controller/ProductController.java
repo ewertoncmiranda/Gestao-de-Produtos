@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import miranda.mb.product.dto.ProductDTO;
 import miranda.mb.product.service.ProductService;
 
@@ -29,17 +30,21 @@ public class ProductController {
 	@Autowired
 	ProductService service ;
 	
+	
 	@PostMapping
+	@ApiOperation(value = "Salva um novo produto.")
 	public ResponseEntity<ProductDTO> saveProduct(@RequestBody ProductDTO produtodto){
 	return ResponseEntity.ok().body(service.saveProduct(produtodto));	
 	}
 	
 	@GetMapping
+	@ApiOperation(value = "Retorna uma lista com todos os produtos. Retorna Lista de entidades.")
 	public ResponseEntity<List<ProductDTO>> getAllProducts(){
 	return ResponseEntity.ok(service.getAllProducts());	
 	}	
 	
 	@GetMapping(value = "/create")
+	@ApiOperation(value = "Gera um produto padrão. Retorna entidade.")
 	public ResponseEntity<ProductDTO> createProduct(){
 	ProductDTO dto = new ProductDTO(10L, "Produto Teste", new BigDecimal(100),new BigDecimal(85));
 	return ResponseEntity.ok(dto);		
@@ -47,16 +52,19 @@ public class ProductController {
 	
 	
 	@GetMapping(value = "/{id}")
+	@ApiOperation(value = "Encontra um produto pelo Id. Retorna entidade .")
 	public ResponseEntity<ProductDTO> productById(@PathVariable Long id) {
 	return ResponseEntity.ok(service.productById(id));		
 	}
 	
 	@PutMapping
+	@ApiOperation(value = "Atualiza um produto. Retorna a entidade atualizada.")
 	public ResponseEntity<ProductDTO> updateProduct(@RequestBody ProductDTO produtodto){
 	return ResponseEntity.ok(service.updateProduct(produtodto));	
 	}
 	
 	@DeleteMapping
+	@ApiOperation(value = "Deleta um produto. Retorna boleano.")
 	public ResponseEntity<Boolean> deleteProduct(@RequestBody ProductDTO produtodto){
 	return ResponseEntity.ok(service.deleteProduct(produtodto.getId()));	
 	}
