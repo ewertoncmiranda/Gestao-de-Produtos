@@ -1,5 +1,5 @@
 # [REST API] Gerenciamento de Produtos.
-## API com operações CRUD básica da entidade produto.
+## API com operações CRUD básica da entidade produtoEntity.
 
 API  com **Java** e o **Spring Framework** com a  arquitetura desenvolvida dentro do padrões de camadas.
 

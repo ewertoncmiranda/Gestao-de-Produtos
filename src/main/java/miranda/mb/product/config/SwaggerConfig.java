@@ -26,8 +26,7 @@ public class SwaggerConfig {
 				.apis(RequestHandlerSelectors.basePackage("miranda.mb.product.controller"))
 				.paths(PathSelectors.any())
 				.build()
-				.apiInfo(metaInfo());				
-			
+				.apiInfo(metaInfo());
 	}
 	
 	private ApiInfo metaInfo() {
